@@ -1,9 +1,9 @@
 build:
-	gcc yoctagrad.c -c -o yoctagrad.o -Os -s
-	strip --strip-unneeded -R .comment -R .gnu.version yoctagrad.o
-	wc -c yoctagrad.o
+	gcc yoctograd.c -c -o yoctograd.o -Os -s
+	strip --strip-unneeded -R .comment -R .gnu.version yoctograd.o
+	wc -c yoctograd.o
 
 test:
-	gcc test.c yoctagrad.o -o test
+	gcc test.c yoctograd.o -o test
 	./test
  

@@ -1,4 +1,4 @@
-# yoctagrad
+# yoctograd
 
 A very tiny autodiff library. It supports addition, and multiplication, and ReLU.
 
@@ -11,10 +11,10 @@ You can build the library and see the size using `just build`.
 
 ```
 $ just build
-gcc yoctagrad.c -c -o yoctagrad.o -Os -s
-strip --strip-unneeded -R .comment -R .gnu.version yoctagrad.o
-wc -c yoctagrad.o
-1680 yoctagrad.o
+gcc yoctograd.c -c -o yoctograd.o -Os -s
+strip --strip-unneeded -R .comment -R .gnu.version yoctograd.o
+wc -c yoctograd.o
+1680 yoctograd.o
 ```
 
 ## usage 
@@ -22,7 +22,7 @@ wc -c yoctagrad.o
 You can see an extremely simple demo in `test.c`, but here's a condensed version:
 
 ```C
-#include "yoctagrad.h"
+#include "yoctograd.h"
 
 int main() {
     Var* a = v_const(-4);
@@ -37,7 +37,7 @@ int main() {
 Try out the full example (with debug printouts) yourself with `just test`!
 ```
 $ just test
-gcc test.c yoctagrad.o -o test
+gcc test.c yoctograd.o -o test
 ./test
 Var sizeof: 28
 a grad: -16.000000

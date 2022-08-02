@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "yoctagrad.h"
+#include "yoctograd.h"
 
 int main() {
 	Var* a = v_const(-4);
