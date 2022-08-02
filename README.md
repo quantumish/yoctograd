@@ -2,7 +2,7 @@
 
 A very tiny autodiff library. It supports addition, and multiplication, and ReLU.
 
-Object file clocks in at 1680 bytes, and runtime memory footprint of a `Var` is 28 bytes. The object file compresses down to 667 bytes with `gzip` on my machine.
+Object file clocks in at 1680 bytes, and runtime memory footprint of a `Var` is 28 bytes. The object file compresses down to 667 bytes with `gzip` on my machine. Source code is only 38 lines long!
 
 For comparison: [micrograd](https://github.com/karpathy/micrograd)'s `pyc` file is 3712 bytes on my machine, and the size of a `Value` 48 bytes. Its `pyc` file(s) compresses down to 1799 bytes on my machine with `gzip`.
 
