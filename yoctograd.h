@@ -1,12 +1,12 @@
 typedef enum Op {
-	NIL, ADD, MUL, RLU,
+    NIL, ADD, MUL, RLU,
 } Op;
 
 typedef struct __attribute__((__packed__)) Var {
-	float value;
-	float grad;
-    Op op;
-	struct Var* parents[2];
+    float value;
+    float grad;
+    Op op; // TODO make uint8
+    struct Var* parents[2];
 } Var;
 
 Var* v_new(float value, Var* child_a, Var* child_b, Op op);
