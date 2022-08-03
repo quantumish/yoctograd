@@ -138,22 +138,22 @@ int main() {
     net->layers[0] = layer_new(4, 8);
     net->layers[1] = layer_new(8, 8);
     net->layers[2] = layer_new(8, 1);
-    
+
     Var** inputs = malloc(4 * sizeof(Var*));
     for (int i = 0; i < 4; i++) inputs[i] = v_const(0.0);
 
     size_t MAX_LINE = 64;
     FILE* train = fopen("./train.txt", "r");
     FILE* test = fopen("./test.txt", "r");
-    char* line = malloc(MAX_LINE * sizeof(char));    
+    char* line = malloc(MAX_LINE * sizeof(char));
     for (int i = 0; i < EPOCHS; i++) {
         float total_loss = 0;
         float total_val_loss = 0;
         int train_lines = 0;
         int test_lines = 0;
-        
-        while (getline(&line, &MAX_LINE, train) != -1) {            
-            float label = read_data_line(line, inputs);            
+
+        while (getline(&line, &MAX_LINE, train) != -1) {
+            float label = read_data_line(line, inputs);
             Var* out = net_forward(net, inputs)[0];
             Var* err = v_add(out, v_mul(v_const(-1), v_const(label)));
             Var* loss = v_mul(err, err);
@@ -167,14 +167,14 @@ int main() {
             v_zero(loss);
             train_lines += 1;
         }
-        
-        while (getline(&line, &MAX_LINE, test) != -1) {            
-            float label = read_data_line(line, inputs);            
+
+        while (getline(&line, &MAX_LINE, test) != -1) {
+            float label = read_data_line(line, inputs);
             Var* out = net_forward(net, inputs)[0];
             Var* err = v_add(out, v_mul(v_const(-1), v_const(label)));
             Var* loss = v_mul(err, err);
             total_val_loss += loss->value;
-            loss->grad = 1;            
+            loss->grad = 1;
             test_lines += 1;
         }
 

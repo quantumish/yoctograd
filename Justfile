@@ -13,6 +13,6 @@ test:
 
 nn:
     head ./data_banknote_authentication.txt -n 1096 > train.txt
-    tail ./data_banknote_authentication.txt -n 274 > test.txt   
+    tail ./data_banknote_authentication.txt -n 274 > test.txt
     gcc nn.c yoctograd.o -o nn
     ./nn
