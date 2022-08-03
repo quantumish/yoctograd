@@ -29,12 +29,12 @@ You can see an extremely simple demo in `test.c`, but here's a condensed version
 #include "yoctograd.h"
 
 int main() {
-	Var* a = v_const(-4);
-	Var* b = v_const(2);
-	Var* c = v_mul(a, b);
-	Var* d = v_add(v_mul(c, a), v_const(2));
-	d->grad = 1; // unfortunately manual for now
-	v_back(d);
+    Var* a = v_const(-4);
+    Var* b = v_const(2);
+    Var* c = v_mul(a, b);
+    Var* d = v_add(v_mul(c, a), v_const(2));
+    d->grad = 1; // unfortunately manual for now
+    v_back(d);
 }
 ```
 
