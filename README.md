@@ -7,7 +7,7 @@ It's not much, but it's all you need for a simple neural network!
 Object file clocks in at 1680 bytes, and runtime memory footprint of a `Var` is 28 bytes. The object file compresses down to 667 bytes with `gzip` on my machine. Source code is only 38 lines long! The object file size is obviously very platform-specific as it depends on how spacious the object file format is. On an M1 Mac I've even seen it as low as ~600 bytes uncompressed.
 
 ## building
-`yoctograd` uses the build tool `Just` for compilation. You can install it with
+`yoctograd` uses the build tool `Just` for compilation.
 
 You can build the library and see the size using `just build`.
 
