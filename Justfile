@@ -8,7 +8,8 @@ build:
 	wc -c yoctograd.o
 
 test:
-	gcc test.c yoctograd.o -o test
+	as yoctograd.asm -o yocto.o
+	gcc test.c yocto.o -o test
 	./test
 
 nn:
